@@ -103,6 +103,7 @@ async function jugar() {
       // de preferencia con una funcion como la de cardValidation
       function comodinValidation(card){
       if (card.type == types) {
+        
         trash.push(cardsPlayers[player].splice(cardIndex, 1)[0]);
       } else {
        return false; 
