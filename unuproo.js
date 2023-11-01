@@ -100,15 +100,36 @@ async function jugar() {
       }
       // 25 min
       // Validar si la carta es un comodin
-      // de preferencia con una funcion como la de cardValidation
-       else if () { 
-        // si la carta es un comodin agregarla al trash y
-        // quitarla del jugador
-        // el turno se termina y pasa al sig jugador
+      // Supongo que la carta es una variable que contiene el valor de la carta
+// y que trash es un array que contiene las cartas descartadas
+// y que jugador es un array que contiene las cartas del jugador actual
+
+// Validar si la carta es un comodín
+// Validar si la carta es un comodín
+function cardValidation(card) {
+  // Los comodines son los valores +2, +4, Cc y R
+  if (card.number == "+2" || card.number == "+4" || card.number == "CC" || card.number == "R") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+else if (cardValidation(card)) {
+  // Si la carta es un comodín agregarla al trash y quitarla del jugador
+  trash.push(card);
+  jugar.splice(jugar.indexOf(card), 1);
+  // El turno se termina y pasa al siguiente jugador
+  // Supongo que hay una variable turno que indica el número del jugador actual
+  // y que hay una variable n que indica el número total de jugadores
+  turno = (turno + 1) % n;
+}
+  
+  
+}
       }
       // el while authmaticamente reinicia a el principio
     }
-  }
-}
+  
 
 jugar();
